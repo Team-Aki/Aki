@@ -10,43 +10,66 @@ public class CutsceneEnter : MonoBehaviour
     [SerializeField]
     public int scene;
 
+    AudioManager audio;
+    bool playOnce;
+
+    SphereCollider collider;
+
+    /*[SerializeField]
+    public AudioClip clipTest;*/
+
+    /*    [SerializeField]
+        public AudioSource audioTest;
+
+        public float volume = 0.5f;
+
+        ;*/
+    //bool stopAudio;
+
+    private void Awake()
+    {
+        //audioTest = GetComponent<AudioSource>();
+        audio = FindObjectOfType<AudioManager>();
+        collider = GetComponent<SphereCollider>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         //player.SetActive(false); //testing
 
-        List<Dictionary<string, object>> data = CSVReader.Read("test");
+        /*print("mp3 name " + data[5]["mp3 name"] + " " +
+                    "foreground name " + data[5]["foreground name"] + " " +
+                    "background name " + data[5]["background name"] + " " +
+                    "time " + data[5]["time"]);
+
+        List<Dictionary<string, object>> data = CSVReader.Read("test");*/
 
         switch (scene)
         {
             case 5:
-                print("mp3 name " + data[5]["mp3 name"] + " " +
-                    "foreground name " + data[5]["foreground name"] + " " +
-                    "background name " + data[5]["background name"] + " " +
-                    "time " + data[5]["time"]);
+
+                audio.Play("WindChime");
+
+                collider.enabled = false; //disable colliders as we won't need to play cutscene again
+
                 break;
             case 4:
-                print("mp3 name " + data[4]["mp3 name"] + " " +
-                    "foreground name " + data[4]["foreground name"] + " " +
-                    "background name " + data[4]["background name"] + " " +
-                    "time " + data[4]["time"]);
+
+                audio.Play("Kick");
+                collider.enabled = false;
+
                 break;
             case 3:
-                print("mp3 name " + data[3]["mp3 name"] + " " +
-                    "foreground name " + data[3]["foreground name"] + " " +
-                    "background name " + data[3]["background name"] + " " +
-                    "time " + data[3]["time"]);
+
+                //audio.Play("WindChime");
                 break;
             case 2:
-                print("mp3 name " + data[2]["mp3 name"] + " " +
-                     "foreground name " + data[2]["foreground name"] + " " +
-                     "background name " + data[2]["background name"] + " " +
-                     "time " + data[2]["time"]);
+               
+                //audioTest.Play();
                 break;
             case 1:
-                 print("mp3 name " + data[1]["mp3 name"] + " " +
-                    "foreground name " + data[1]["foreground name"] + " " +
-                    "background name " + data[1]["background name"] + " " +
-                    "time " + data[1]["time"]);
+                
+                //audioTest.Play();
                 break;
             default:
                 print("Incorrect ");
