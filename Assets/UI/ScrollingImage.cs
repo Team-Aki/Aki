@@ -5,16 +5,13 @@ using UnityEngine.UI;
 
 public class ScrollingImage : MonoBehaviour
 {
-    public Sprite foreground;
-    public Sprite background;
-
     public Image foreImage;
     public Image backImage;
 
-    private Vector3 foreSpeed = new Vector3(100, 0);
-    private Vector3 backSpeed = new Vector3(50f, 0);
+    private Vector3 foreSpeed = new Vector3(10, 0);
+    private Vector3 backSpeed = new Vector3(5f, 0);
     
-    public void scrollImage(Sprite fore,Sprite back)
+    public void scrollImage(Sprite fore,Sprite back) //sets new image and resets postion
     {
         foreImage.sprite = fore;
         backImage.sprite = back;
@@ -25,12 +22,7 @@ public class ScrollingImage : MonoBehaviour
     
     void Update()
     {
-        foreImage.transform.localPosition += foreSpeed * Time.deltaTime;
-        backImage.transform.localPosition += backSpeed * Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            scrollImage(foreground, background);
-        }
+        foreImage.transform.localPosition += foreSpeed * Time.deltaTime; //moves foreground
+        backImage.transform.localPosition += backSpeed * Time.deltaTime; //moves background
     }
 }
