@@ -6,11 +6,13 @@ public class CutsceneEnter : MonoBehaviour
 {
 
     public GameObject player;
-    public int scene = 5;
+
+    [SerializeField]
+    public int scene;
 
     void OnTriggerEnter(Collider other)
     {
-        player.SetActive(false); //testing
+        //player.SetActive(false); //testing
 
         List<Dictionary<string, object>> data = CSVReader.Read("test");
 
