@@ -14,6 +14,13 @@ public class CutsceneEnter : MonoBehaviour
     bool playOnce;
 
     SphereCollider collider;
+    
+    private ScrollingImage ScrollingImage;
+    private CanvasGroup cg;
+
+    /*public Sprite[] fore;
+    public Sprite[] back;
+    public float[] waiting;*/
 
     /*[SerializeField]
     public AudioClip clipTest;*/
@@ -35,21 +42,14 @@ public class CutsceneEnter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //player.SetActive(false); //testing
-
-        /*print("mp3 name " + data[5]["mp3 name"] + " " +
-                    "foreground name " + data[5]["foreground name"] + " " +
-                    "background name " + data[5]["background name"] + " " +
-                    "time " + data[5]["time"]);
-
-        List<Dictionary<string, object>> data = CSVReader.Read("test");*/
 
         switch (scene)
         {
             case 5:
 
-                cutscene.Play("Windchime");
-
+                cutscene.PlaySound("Windchime");
+                cutscene.PlayImage("Scene5");
+           
                 collider.enabled = false; //disable colliders as we won't need to play cutscene again
 
                 //stop the player
@@ -57,7 +57,7 @@ public class CutsceneEnter : MonoBehaviour
                 break;
             case 4:
 
-                cutscene.Play("Kick");
+                cutscene.PlaySound("Kick");
                 collider.enabled = false;
 
                 break;
@@ -82,3 +82,4 @@ public class CutsceneEnter : MonoBehaviour
             
     }
 }
+
