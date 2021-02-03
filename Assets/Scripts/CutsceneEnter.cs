@@ -10,7 +10,7 @@ public class CutsceneEnter : MonoBehaviour
     [SerializeField]
     public int scene;
 
-    AudioManager audio;
+    CutsceneManager cutscene;
     bool playOnce;
 
     SphereCollider collider;
@@ -29,7 +29,7 @@ public class CutsceneEnter : MonoBehaviour
     private void Awake()
     {
         //audioTest = GetComponent<AudioSource>();
-        audio = FindObjectOfType<AudioManager>();
+        cutscene = FindObjectOfType<CutsceneManager>();
         collider = GetComponent<SphereCollider>();
     }
 
@@ -48,14 +48,16 @@ public class CutsceneEnter : MonoBehaviour
         {
             case 5:
 
-                audio.Play("WindChime");
+                cutscene.Play("Windchime");
 
                 collider.enabled = false; //disable colliders as we won't need to play cutscene again
+
+                //stop the player
 
                 break;
             case 4:
 
-                audio.Play("Kick");
+                cutscene.Play("Kick");
                 collider.enabled = false;
 
                 break;
