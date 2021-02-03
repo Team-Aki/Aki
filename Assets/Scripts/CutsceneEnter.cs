@@ -33,9 +33,11 @@ public class CutsceneEnter : MonoBehaviour
             case 5:
 
                 cutscene.PlaySound("Windchime");
+
+                collider.enabled = false; //disable colliders as we won't need to play cutscene again
                 sceneImage.PlayImage();
            
-                collider.enabled = false; //disable colliders as we won't need to play cutscene again
+                
 
                 //stop the player
 
