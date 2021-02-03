@@ -5,13 +5,14 @@ using UnityEngine;
 public class CutsceneEnter : MonoBehaviour
 {
 
-    public GameObject player;
-
-    [SerializeField]
-    public int scene;
+    [SerializeField] public int scene;
+    [SerializeField] float fadeOutTime = 0.3f;
+    [SerializeField] float fadeInTime = 0.5f;
+    [SerializeField] float fadeWaitTime = 0.4f;
 
     CutsceneManager cutscene;
-    bool playOnce;
+
+    Fader fader;
 
     SphereCollider collider;
 
@@ -21,8 +22,24 @@ public class CutsceneEnter : MonoBehaviour
     {
         //audioTest = GetComponent<AudioSource>();
         cutscene = FindObjectOfType<CutsceneManager>();
+        fader = FindObjectOfType<Fader>();
         collider = GetComponent<SphereCollider>();
         sceneImage = GetComponent<Images>();
+    }
+
+    private IEnumerator Transition(string soundName)
+    {
+
+
+
+        cutscene.PlaySound(soundName);
+        yield return fader.FadeOut(fadeOutTime);
+
+        //sceneImage.PlayImage();
+
+        collider.enabled = false; //disable colliders as we won't need to play cutscene again
+        yield return new WaitForSeconds(fadeWaitTime);
+        yield return fader.FadeIn(fadeInTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,20 +49,15 @@ public class CutsceneEnter : MonoBehaviour
         {
             case 5:
 
-                cutscene.PlaySound("Windchime");
+                //if (other.tag == "Player")
 
-                collider.enabled = false; //disable colliders as we won't need to play cutscene again
-                sceneImage.PlayImage();
-           
-                
-
-                //stop the player
+                StartCoroutine(Transition("Windchime"));
+ 
 
                 break;
             case 4:
 
-                cutscene.PlaySound("Kick");
-                collider.enabled = false;
+                StartCoroutine(Transition("Kick"));
 
                 break;
             case 3:
