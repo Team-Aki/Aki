@@ -10,7 +10,11 @@ public class CutsceneEnter : MonoBehaviour
     [SerializeField] float fadeInTime = 0.5f;
     [SerializeField] float fadeWaitTime = 0.4f;
 
+    [SerializeField] Sprite fore;
+    [SerializeField] Sprite back;
+
     CutsceneManager cutscene;
+    ScrollingImage image;
 
     Fader fader;
 
@@ -25,17 +29,18 @@ public class CutsceneEnter : MonoBehaviour
         fader = FindObjectOfType<Fader>();
         collider = GetComponent<SphereCollider>();
         sceneImage = GetComponent<Images>();
+        image = GetComponent<ScrollingImage>();
     }
 
     private IEnumerator Transition(string soundName)
     {
 
-
-
         cutscene.PlaySound(soundName);
         yield return fader.FadeOut(fadeOutTime);
 
         //sceneImage.PlayImage();
+        image.scrollImage(fore, back);
+
 
         collider.enabled = false; //disable colliders as we won't need to play cutscene again
         yield return new WaitForSeconds(fadeWaitTime);
@@ -44,7 +49,6 @@ public class CutsceneEnter : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         switch (scene)
         {
             case 5:
