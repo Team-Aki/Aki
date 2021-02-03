@@ -14,30 +14,15 @@ public class CutsceneEnter : MonoBehaviour
     bool playOnce;
 
     SphereCollider collider;
-    
-    private ScrollingImage ScrollingImage;
-    private CanvasGroup cg;
 
-    /*public Sprite[] fore;
-    public Sprite[] back;
-    public float[] waiting;*/
-
-    /*[SerializeField]
-    public AudioClip clipTest;*/
-
-    /*    [SerializeField]
-        public AudioSource audioTest;
-
-        public float volume = 0.5f;
-
-        ;*/
-    //bool stopAudio;
+    Images sceneImage;
 
     private void Awake()
     {
         //audioTest = GetComponent<AudioSource>();
         cutscene = FindObjectOfType<CutsceneManager>();
         collider = GetComponent<SphereCollider>();
+        sceneImage = GetComponent<Images>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,7 +33,7 @@ public class CutsceneEnter : MonoBehaviour
             case 5:
 
                 cutscene.PlaySound("Windchime");
-                cutscene.PlayImage("Scene5");
+                sceneImage.PlayImage();
            
                 collider.enabled = false; //disable colliders as we won't need to play cutscene again
 
