@@ -22,6 +22,7 @@ public class UIButtons : MonoBehaviour
 
     public void quitToMenu()
     {
+        Time.timeScale = 1;
         //load main menu scene
         Debug.Log("Load Main Menu");
 
