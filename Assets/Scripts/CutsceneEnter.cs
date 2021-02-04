@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CutsceneEnter : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class CutsceneEnter : MonoBehaviour
     [SerializeField] float fadeInTime = 0.5f;
     [SerializeField] float fadeWaitTime = 0.4f;
 
+    //Image[] images;
+/*
     [SerializeField] Sprite fore;
-    [SerializeField] Sprite back;
+    [SerializeField] Sprite back;*/
 
     CutsceneManager cutscene;
 
@@ -19,7 +22,8 @@ public class CutsceneEnter : MonoBehaviour
 
     SphereCollider collider;
 
-    Images sceneImage;
+    SceneActive sceneImage;
+
 
     private void Awake()
     {
@@ -27,17 +31,29 @@ public class CutsceneEnter : MonoBehaviour
         cutscene = FindObjectOfType<CutsceneManager>();
         fader = FindObjectOfType<Fader>();
         collider = GetComponent<SphereCollider>();
-        sceneImage = GetComponent<Images>();
+        sceneImage = GetComponent<SceneActive>();
+        //images = GetComponentsInChildren<Image>();
     }
 
-    private IEnumerator Transition(string soundName)
+    private void Start()
+    {
+        /*for (int i = 0; i < images.Length; i++)
+        {
+            images[i].enabled = false;
+        }*/
+
+    }
+
+    private IEnumerator Transition(string soundName, string imageName)
     {
 
         cutscene.PlaySound(soundName);
         collider.enabled = false; //disable colliders as we won't need to play cutscene again
         yield return fader.FadeOut(fadeOutTime);
 
-        sceneImage.PlayImage();
+        cutscene.PlayImage(imageName);
+
+       // sceneImage.TryAdvance();
 
         yield return new WaitForSeconds(fadeWaitTime);
         yield return fader.FadeIn(fadeInTime);
@@ -51,13 +67,13 @@ public class CutsceneEnter : MonoBehaviour
 
                 //if (other.tag == "Player")
 
-                StartCoroutine(Transition("Windchime"));
+                StartCoroutine(Transition("Windchime", "Doggo"));
  
 
                 break;
             case 4:
 
-                StartCoroutine(Transition("Kick"));
+                StartCoroutine(Transition("Kick", "Doggo"));
 
                 break;
             case 3:

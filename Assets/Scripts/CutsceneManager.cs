@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class CutsceneManager : MonoBehaviour
 {
     public Sound[] sounds;
+    public ImageTrigger[] images;
 
     public static CutsceneManager instance;
 
@@ -34,6 +35,18 @@ public class CutsceneManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
+
+    }
+
+    public void PlayImage(string imageName)
+    {
+        ImageTrigger i = Array.Find(images, image => image.imageName == imageName);
+        if (i == null)
+        {
+            Debug.LogWarning("Image" + name + "not found");
+            return;
+        }
+        i.image.enabled = true;
     }
 
     public void PlaySound(string name)

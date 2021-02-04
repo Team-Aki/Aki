@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5267877433325090296}
+  - component: {fileID: 8004313972269424938}
   - component: {fileID: 5267877433325090299}
   - component: {fileID: 5267877433325090298}
   - component: {fileID: 5267877433325090293}
@@ -20,7 +20,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5267877433325090296
+--- !u!4 &8004313972269424938
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5267877433325090292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 600, y: 314.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,8 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0f65a06e3efae4a94b3defce1709f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  scene: 4
-  fadeOutTime: 0.3
-  fadeInTime: 0.5
-  fadeWaitTime: 0.4
+  scene: 5
+  fadeOutTime: 3
+  fadeInTime: 3
+  fadeWaitTime: 3
