@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/UI/Prefabs.meta
 guid: 26630358da98d8d4aacf29c169da49b0
+=======
+guid: 0d28a555adcf8dc49802033673408975
+>>>>>>> Level-Design:Assets/3D Haven.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
