@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: cee8f230fe3185a4c94db28d76b41a45
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 89cef61fdc9dfcb44ad287c1f6f548da
+>>>>>>> Stashed changes
   m_configObjects: {}

@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
+
     public void playGame()
     {
+        Time.timeScale = 1;
         //load whatever scene is the main game
         Debug.Log("Play Game");
+
+        SceneManager.LoadScene("MainScene");
     }
 
     public void quitToOS()
@@ -20,6 +24,8 @@ public class UIButtons : MonoBehaviour
     {
         //load main menu scene
         Debug.Log("Load Main Menu");
+
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
