@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
 
     private float directionY; //temp value for direction
 
+    private float joyHorizontal;
+    private float joyVertical;
+    private int XboxController = 0;
+    private int Ps4Controller = 0;
+    private bool isUsingController;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -45,23 +51,41 @@ public class PlayerController : MonoBehaviour
         doubleJumpMultiplier = 1.0f;*/
         sprint = speed * sprintMultiplier;
 
-/*        maxSpeed = 10.0f;
-        timeZeroToMax = 5.8f;
-        accelRatePerSec = maxSpeed / timeZeroToMax; //equation of acceleration
-        forwardVelocity = 0.0f;*/
+
+
+        /*        maxSpeed = 10.0f;
+                timeZeroToMax = 5.8f;
+                accelRatePerSec = maxSpeed / timeZeroToMax; //equation of acceleration
+                forwardVelocity = 0.0f;*/
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckController();
+
         //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //sphere at bottom of the player to check for collisions for gravity checks
 
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        if (isUsingController)
+        {
+            joyHorizontal = Input.GetAxis("Horizontal");
+            joyVertical = Input.GetAxis("Vertical");
+            Vector3 joyDirection = new Vector3(joyHorizontal, 0.0f, joyVertical).normalized; //normalize to not double the speed when pressing 2 or more keys
+            MoveCharacter(joyDirection);
+        }
+        else
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized; //normalize to not double the speed when pressing 2 or more keys
+            MoveCharacter(direction);
+        }
+
 
         UpdateGravity();
 
-        Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized; //normalize to not double the speed when pressing 2 or more keys
+
+
 
         //JumpCheck(direction); //direction = JumpCheck(direction);
 
@@ -69,13 +93,37 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime); // only Y axis for jump functionality
 
-        MoveCharacter(direction);
+
 
         if (controller.isGrounded) //&& velocity.y < 0
         {
             velocity.y = -2f;
         }
 
+    }
+
+    private void CheckController()
+    {
+        string[] names = Input.GetJoystickNames();
+
+        for (int i = 0; i < names.Length; i++)
+        {
+            if (names[i].Length == 19)
+            {
+                print("Ps4 Controller connected");
+                Ps4Controller = 1;
+                XboxController = 0;
+                isUsingController = true;
+            }
+
+            if (names[i].Length == 33)
+            {
+                print("Xbox Controller connected");
+                XboxController = 1;
+                Ps4Controller = 0;
+                isUsingController = true;
+            }
+        }
     }
 
     private void MoveCharacter(Vector3 direction)
@@ -95,10 +143,23 @@ public class PlayerController : MonoBehaviour
             speed += forwardVelocity;
             speed = Mathf.Min(forwardVelocity, maxSpeed);*/
 
-            if (Input.GetButton("Sprint")) //on hold
-                controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+            if (isUsingController)
+            {
+                if (joyHorizontal > 0.5f || joyHorizontal < -0.5f)
+                    controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                else if (joyVertical > 0.5f || joyVertical < -0.5f)
+                    controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                else
+                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            }
             else
-                controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            {
+                if (Input.GetButton("Sprint")) //on hold
+                    controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                else
+                    controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            }
+           
         }
     }
 
