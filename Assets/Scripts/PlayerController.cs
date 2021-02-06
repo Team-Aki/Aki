@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
 
     private float joyHorizontal;
     private float joyVertical;
+    float horizontal, vertical;
     private int XboxController = 0;
     private int Ps4Controller = 0;
     private bool isUsingController;
+    private bool isUsingKeyboard;
 
     void Awake()
     {
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
 /*        jumpHeight = 14.0f;
         doubleJumpMultiplier = 1.0f;*/
         sprint = speed * sprintMultiplier;
+        CheckController();
 
 
 
@@ -62,21 +65,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckController();
+
 
         //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //sphere at bottom of the player to check for collisions for gravity checks
 
         if (isUsingController)
         {
-            joyHorizontal = Input.GetAxis("Horizontal");
-            joyVertical = Input.GetAxis("Vertical");
+            JoypadInput();
             Vector3 joyDirection = new Vector3(joyHorizontal, 0.0f, joyVertical).normalized; //normalize to not double the speed when pressing 2 or more keys
             MoveCharacter(joyDirection);
         }
         else
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
+
+            KeyboardInput();
             Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized; //normalize to not double the speed when pressing 2 or more keys
             MoveCharacter(direction);
         }
@@ -100,6 +102,22 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
 
+    }
+
+    private bool JoypadInput()
+    {
+        isUsingController = true;
+        joyHorizontal = Input.GetAxis("Horizontal");
+        joyVertical = Input.GetAxis("Vertical");
+        return isUsingController;
+    }
+
+    private bool KeyboardInput()
+    {
+        isUsingKeyboard = true;
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        return isUsingKeyboard;
     }
 
     private void CheckController()
