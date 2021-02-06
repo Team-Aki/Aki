@@ -6,6 +6,8 @@ TagManager:
   tags:
   - rock
   - lily pad
+  - tree
+  - dirt
   layers:
   - Default
   - TransparentFX
