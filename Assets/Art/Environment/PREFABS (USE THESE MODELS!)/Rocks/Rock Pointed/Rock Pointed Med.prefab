@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 672025066246877853}
   m_Layer: 0
-  m_Name: Rock Pointed Light
-  m_TagString: Untagged
+  m_Name: Rock Pointed Med
+  m_TagString: rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901311354917979141}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 590.6889, y: 89.34261, z: 469.4541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -111,6 +111,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Two_pointed_rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f57da20aebcbbd841b6b2b999f26ee3c,
+        type: 3}
+      propertyPath: m_TagString
+      value: rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f57da20aebcbbd841b6b2b999f26ee3c, type: 3}
