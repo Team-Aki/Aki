@@ -55,13 +55,13 @@ Material:
     m_Floats:
     - Boolean_D6B9C2C2: 0
     - Boolean_DFB46825: 1
-    - Vector1_284A5250: 0.411
-    - Vector1_2CCFB18E: 0.035
-    - Vector1_81B8F05F: 0.023
+    - Vector1_284A5250: -0.08
+    - Vector1_2CCFB18E: 0.118
+    - Vector1_81B8F05F: 0.03
     - Vector1_8E42EF1D: 10
     - Vector1_8EDCC579: 10
     - Vector1_CBF2F6F9: 10
-    - Vector1_CC6FDCC9: 0.529
+    - Vector1_CC6FDCC9: 0.355
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
