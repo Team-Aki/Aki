@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private int Ps4Controller = 0;
     private bool isUsingController;
     private bool isUsingKeyboard;
+    private bool stopMovement = false;
 
     void Awake()
     {
@@ -92,6 +93,13 @@ public class PlayerController : MonoBehaviour
 
         UpdateGravity();
 
+        if (stopMovement)
+        {
+            //CharacterController cc = GetComponent<CharacterController>();
+            StartCoroutine(StopMovement());
+            stopMovement = false;
+        }
+
 
         //JumpCheck(direction); //direction = JumpCheck(direction);
 
@@ -116,9 +124,19 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator InteractionAnimation()
     {
+        stopMovement = true;
         anim.SetBool("Trigger", true);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(7.0f);
         anim.SetBool("Trigger", false);
+        controller.enabled = true;
+
+    }
+
+    private IEnumerator StopMovement()
+    {
+        controller.enabled = false;
+        yield return new WaitForSeconds(7.0f);
+        controller.enabled = true;
     }
 
     private bool JoypadInput()
