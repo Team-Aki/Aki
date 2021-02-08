@@ -97,7 +97,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_82A4343D: {r: 0.064532354, g: 0.754717, b: 0, a: 0}
+    - Color_82A4343D: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0}
     - Color_BE34089D: {r: 0.40574864, g: 0.6603774, b: 0.3519936, a: 0}
     - Color_BFFBAA05: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

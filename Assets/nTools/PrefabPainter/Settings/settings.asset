@@ -5787,7 +5787,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Plant 1 - 1
       settings:
@@ -5927,7 +5927,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 5
-      selected: 1
+      selected: 0
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -6333,7 +6333,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Slab
       settings:
@@ -6466,7 +6466,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Pillar
       settings:
@@ -7005,11 +7005,11 @@ MonoBehaviour:
     levelsInWhite: 255
     levelsOutBlack: 0
     levelsOutWhite: 255
-  activeTab: 5
+  activeTab: 4
   paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 769
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 288
