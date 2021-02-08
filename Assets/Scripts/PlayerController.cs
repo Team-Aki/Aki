@@ -106,21 +106,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Cutscene"))
-        {
-            StartCoroutine(InteractionAnimation());
-        }
-    }
-
-    private IEnumerator InteractionAnimation()
-    {
-        anim.SetBool("Trigger", true);
-        yield return new WaitForSeconds(5.0f);
-        anim.SetBool("Trigger", false);
-    }
-
     private bool JoypadInput()
     {
         isUsingController = true;
@@ -215,14 +200,14 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        UpdateMovementAnimation();
+        UpdateAnimator();
     }
 
-        private void UpdateMovementAnimation()
+        private void UpdateAnimator()
     {
         Vector3 velocity = controller.velocity;
         Vector3 localVelocity = controller.transform.InverseTransformDirection(velocity);
-        float speed = localVelocity.z; //take forward velocity as it's the one we need
+        float speed = localVelocity.z;
         anim.SetFloat("Velocity", speed);
     }
 
