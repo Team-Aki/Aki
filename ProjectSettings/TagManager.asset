@@ -8,6 +8,7 @@ TagManager:
   - lily pad
   - tree
   - dirt
+  - Cutscene
   layers:
   - Default
   - TransparentFX
