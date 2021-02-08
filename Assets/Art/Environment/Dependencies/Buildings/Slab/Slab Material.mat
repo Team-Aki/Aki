@@ -67,14 +67,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_D6B9C2C2: 0
-    - Boolean_DFB46825: 0
+    - Boolean_DFB46825: 1
     - Vector1_284A5250: 0.04
-    - Vector1_2CCFB18E: 0.068
-    - Vector1_81B8F05F: 0.022
+    - Vector1_2CCFB18E: 0.333
+    - Vector1_81B8F05F: 0.303
     - Vector1_8E42EF1D: 0
     - Vector1_8EDCC579: 0
     - Vector1_CBF2F6F9: 0
-    - Vector1_CC6FDCC9: 0.394
+    - Vector1_CC6FDCC9: 0.307
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
