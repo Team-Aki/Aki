@@ -9,8 +9,7 @@ public class CutsceneStart : MonoBehaviour
     //public Sound sound;
     public Image[] fore;
     public Image[] back;
-
-    private CanvasGroup fadeAlpha;
+    public Sound sound;
 
     Fader fader;
 
@@ -23,11 +22,17 @@ public class CutsceneStart : MonoBehaviour
 
     bool isPlaying;
 
+    private void Awake()
+    {
+        sound.source = gameObject.AddComponent<AudioSource>();
+        sound.source.clip = sound.clip;
+        sound.source.volume = sound.volume;
+        sound.source.pitch = sound.pitch;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
-        fadeAlpha = GetComponentInChildren<CanvasGroup>();
 
         isPlaying = false;
         //sound = GetComponent<Sound>();
@@ -59,15 +64,12 @@ public class CutsceneStart : MonoBehaviour
 
     private IEnumerator Transition()
     {
-        //cutscene.PlaySound(soundName);
+
+        sound.source.Play();
         GetComponent<Collider>().enabled = false; //disable colliders as we won't need to play cutscene again
         yield return fader.FadeOut(fadeOutTime);
 
-        //cutscene.PlayImage(imageName);
-
         EnableImage();
-
-        // sceneImage.TryAdvance();
 
         yield return new WaitForSeconds(fadeWaitTime);
 
@@ -81,7 +83,6 @@ public class CutsceneStart : MonoBehaviour
         for (int i = 0; i < fore.Length; i++)
         {
             back[i].enabled = true;
-            //ScrollImage();
             isPlaying = true;
         }
 
@@ -89,7 +90,6 @@ public class CutsceneStart : MonoBehaviour
         {
             fore[i].enabled = true;
             isPlaying = true;
-            //ScrollImage();
         }
     }
 
@@ -118,15 +118,10 @@ public class CutsceneStart : MonoBehaviour
     private void ScrollImage()
     {
         for (int i = 0; i < fore.Length; i++)
-        {
-
             fore[i].transform.localPosition += foreSpeed * Time.deltaTime; //moves foreground
-
-        }
+        
 
         for (int i = 0; i < back.Length; i++)
-        {
             back[i].transform.localPosition += backSpeed * Time.deltaTime; //moves background
-        }
     }
 }
