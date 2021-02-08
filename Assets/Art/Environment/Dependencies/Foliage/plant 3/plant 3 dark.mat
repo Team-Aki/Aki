@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: plant 1 light
+  m_Name: plant 3 dark
   m_Shader: {fileID: -6465566751694194690, guid: 854f9d11454c23b42ae018eeca4ba5c4,
     type: 3}
   m_ShaderKeywords: 
@@ -98,7 +98,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_82A4343D: {r: 0.064532354, g: 0.754717, b: 0, a: 0}
-    - Color_BE34089D: {r: 0.40574864, g: 0.6603774, b: 0.3519936, a: 0}
+    - Color_BE34089D: {r: 0.19811325, g: 0.5283019, b: 0.13207547, a: 0}
     - Color_BFFBAA05: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

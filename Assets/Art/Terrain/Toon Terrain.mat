@@ -56,13 +56,13 @@ Material:
     - BOOLEAN_76578762: 1
     - Boolean_D6B9C2C2: 0
     - Boolean_DFB46825: 1
-    - Vector1_284A5250: 0.068
-    - Vector1_2CCFB18E: 0.02
-    - Vector1_81B8F05F: 0.08
+    - Vector1_284A5250: -0.13
+    - Vector1_2CCFB18E: 1
+    - Vector1_81B8F05F: 0.426
     - Vector1_8E42EF1D: 0
     - Vector1_8EDCC579: 0
     - Vector1_CBF2F6F9: 0
-    - Vector1_CC6FDCC9: 0.23
+    - Vector1_CC6FDCC9: 0.48
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

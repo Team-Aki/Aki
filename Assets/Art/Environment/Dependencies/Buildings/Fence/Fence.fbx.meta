@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 90c83cf0121249c46b450dde23985555
+guid: 577f5f66b5decb342805ea38bb9d4061
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plant01
-    second: {fileID: 2100000, guid: b69f6d27ccf5ef646af21fed33b02700, type: 2}
+      name: lambert2
+    second: {fileID: 2100000, guid: 72279c1a86d352b47acee1c39f94d484, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: cc51cfe1b9ee7944f88eaa5e1d71d1b2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -39,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 10
+    globalScale: 200
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -86,7 +91,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 10
+    globalScale: 200
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

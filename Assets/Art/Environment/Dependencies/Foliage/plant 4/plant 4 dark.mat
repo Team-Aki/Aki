@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: plant 1 dark
+  m_Name: plant 4 dark
   m_Shader: {fileID: -6465566751694194690, guid: 854f9d11454c23b42ae018eeca4ba5c4,
     type: 3}
   m_ShaderKeywords: 
