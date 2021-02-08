@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    public Animator anim;
 
     //Movement Settings
 
@@ -33,7 +36,9 @@ public class PlayerController : MonoBehaviour
 
     private float joyHorizontal;
     private float joyVertical;
+    Vector2 joyInput;
     float horizontal, vertical;
+    Vector2 keyboardInput;
     private int XboxController = 0;
     private int Ps4Controller = 0;
     private bool isUsingController;
@@ -42,6 +47,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
     }
     void Start()
     {
@@ -65,28 +71,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        keyboardInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        joyInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //sphere at bottom of the player to check for collisions for gravity checks
 
         if (isUsingController)
         {
             JoypadInput();
-            Vector3 joyDirection = new Vector3(joyHorizontal, 0.0f, joyVertical).normalized; //normalize to not double the speed when pressing 2 or more keys
+            Vector3 joyDirection = new Vector3(joyInput.x, 0.0f, joyInput.y).normalized; //normalize to not double the speed when pressing 2 or more keys
             MoveCharacter(joyDirection);
         }
         else
         {
 
             KeyboardInput();
-            Vector3 direction = new Vector3(horizontal, 0.0f, vertical).normalized; //normalize to not double the speed when pressing 2 or more keys
+            Vector3 direction = new Vector3(keyboardInput.x, 0.0f, keyboardInput.y).normalized; //normalize to not double the speed when pressing 2 or more keys
             MoveCharacter(direction);
         }
 
-
         UpdateGravity();
-
-
 
 
         //JumpCheck(direction); //direction = JumpCheck(direction);
@@ -94,8 +98,6 @@ public class PlayerController : MonoBehaviour
         //velocity.y -= gravity + Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime); // only Y axis for jump functionality
-
-
 
         if (controller.isGrounded) //&& velocity.y < 0
         {
@@ -164,21 +166,49 @@ public class PlayerController : MonoBehaviour
             if (isUsingController)
             {
                 if (joyHorizontal > 0.5f || joyHorizontal < -0.5f)
+                {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
+                }
                 else if (joyVertical > 0.5f || joyVertical < -0.5f)
+                {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
+                }
                 else
+                {
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                    //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
+                }
             }
             else
             {
                 if (Input.GetButton("Sprint")) //on hold
+                {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
+                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
+                }
                 else
+                {
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                    //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
+
+                }
             }
-           
+
+            //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
+
         }
+
+        UpdateAnimator();
+    }
+
+        private void UpdateAnimator()
+    {
+        Vector3 velocity = controller.velocity;
+        Vector3 localVelocity = controller.transform.InverseTransformDirection(velocity);
+        float speed = localVelocity.z;
+        anim.SetFloat("Velocity", speed);
     }
 
     private void UpdateGravity()
