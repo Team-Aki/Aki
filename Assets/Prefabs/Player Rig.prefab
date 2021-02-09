@@ -925,6 +925,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6004662129508824615, guid: 7bd6a2f7149c6d242b36fa5a64f56108,
+        type: 3}
+      propertyPath: mask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7bd6a2f7149c6d242b36fa5a64f56108, type: 3}
