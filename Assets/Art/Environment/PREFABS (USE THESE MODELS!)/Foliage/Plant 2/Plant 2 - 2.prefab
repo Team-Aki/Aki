@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995165642332449670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant 2 - 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8073875594832033001}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 567.423, y: 89.34261, z: 450.15533}
   m_LocalScale: {x: 1, y: 0.80220807, z: 1}
   m_Children:
@@ -103,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f7d0d74133b3c234fb1bce66c220adf4, type: 2}
+    - target: {fileID: -4297575395891425972, guid: 31de9a223dc38254481d5561a8aaf1ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -651487023672121932, guid: 31de9a223dc38254481d5561a8aaf1ce,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -112,6 +117,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 31de9a223dc38254481d5561a8aaf1ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016089271760387442, guid: 31de9a223dc38254481d5561a8aaf1ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31de9a223dc38254481d5561a8aaf1ce, type: 3}

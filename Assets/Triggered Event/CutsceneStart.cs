@@ -16,6 +16,7 @@ public class CutsceneStart : MonoBehaviour
     [SerializeField] float fadeOutTime = 3f;
     [SerializeField] float fadeInTime = 3f;
     [SerializeField] float fadeWaitTime = 3f;
+    [SerializeField] float transitionBetween = 0.01f;
 
     private Vector3 foreSpeed = new Vector3(5f, 0);
     private Vector3 backSpeed = new Vector3(-5f, 0);
@@ -64,48 +65,56 @@ public class CutsceneStart : MonoBehaviour
 
     private IEnumerator Transition()
     {
-
         sound.source.Play();
         GetComponent<Collider>().enabled = false; //disable colliders as we won't need to play cutscene again
         yield return fader.FadeOut(fadeOutTime);
 
-        EnableImage();
+        EnableFirstImage();
 
         yield return new WaitForSeconds(fadeWaitTime);
 
-        DisableImage();
+        DisableFirstImage();
+
+        yield return new WaitForSeconds(transitionBetween);
+
+        EnableSecondImage();
+
+        yield return new WaitForSeconds(fadeWaitTime);
+
+        DisableSecondImage();
 
         yield return fader.FadeIn(fadeInTime);
     }
 
-    private void EnableImage()
+    private void EnableFirstImage()
     {
-        for (int i = 0; i < fore.Length; i++)
-        {
-            back[i].enabled = true;
-            isPlaying = true;
-        }
 
-        for (int i = 0; i < back.Length; i++)
-        {
-            fore[i].enabled = true;
-            isPlaying = true;
-        }
+        back[0].enabled = true;
+        fore[0].enabled = true;
+        isPlaying = true;
+        
+    }
+    
+    private void EnableSecondImage()
+    {
+        back[1].enabled = true;
+        fore[1].enabled = true;
+        isPlaying = true;
     }
 
-    private void DisableImage()
+    private void DisableFirstImage()
     {
-        for (int i = 0; i < fore.Length; i++)
-        {
-            back[i].enabled = false;
-            isPlaying = false;
-        }
+        fore[0].enabled = false;
+        back[0].enabled = false;
+        isPlaying = false;
+    }
 
-        for (int i = 0; i < back.Length; i++)
-        {
-            fore[i].enabled = false;
-            isPlaying = false;
-        }
+
+    private void DisableSecondImage()
+    {
+        fore[1].enabled = false;
+        back[1].enabled = false;
+        isPlaying = false;
     }
 
     // Update is called once per frame

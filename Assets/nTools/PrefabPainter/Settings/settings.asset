@@ -146,7 +146,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 1 Orange
       settings:
@@ -279,7 +279,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 1 Pink
       settings:
@@ -293,7 +293,7 @@ MonoBehaviour:
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
-        orientationMode: 0
+        orientationMode: 2
         alongBrushStroke: 0
         rotation: {x: 0, y: 0, z: 0}
         randomizeOrientationX: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 1 Red
       settings:
@@ -545,7 +545,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 1 Yellow
       settings:
@@ -678,7 +678,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 2 Green
       settings:
@@ -811,7 +811,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 2 Orange
       settings:
@@ -944,7 +944,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 2 Pink
       settings:
@@ -1077,7 +1077,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 2 Red
       settings:
@@ -1210,7 +1210,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 2 Yellow
       settings:
@@ -1343,7 +1343,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 3 Green
       settings:
@@ -1476,7 +1476,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 3 Orange
       settings:
@@ -1609,7 +1609,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 3 Pink
       settings:
@@ -1742,7 +1742,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 3 Red
       settings:
@@ -1875,7 +1875,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 3 Yellow
       settings:
@@ -2008,7 +2008,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 4 Green
       settings:
@@ -2141,7 +2141,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 4 Orange
       settings:
@@ -2274,7 +2274,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 4 Pink
       settings:
@@ -2407,7 +2407,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 4 Red
       settings:
@@ -2540,7 +2540,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 4 Yellow
       settings:
@@ -2673,7 +2673,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 5 Green
       settings:
@@ -2806,7 +2806,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 5 Orange
       settings:
@@ -2820,7 +2820,7 @@ MonoBehaviour:
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
-        orientationMode: 0
+        orientationMode: 2
         alongBrushStroke: 0
         rotation: {x: 0, y: 0, z: 0}
         randomizeOrientationX: 0
@@ -3072,7 +3072,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 5 Red
       settings:
@@ -3205,7 +3205,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 5 Yellow
       settings:
@@ -3338,7 +3338,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -3758,7 +3758,7 @@ MonoBehaviour:
     - name: Mixed
       settings:
         brushRadius: 21.52336
-        brushSpacing: 10
+        brushSpacing: 0.01
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -4035,7 +4035,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Rock Cuboid Light
       settings:
@@ -4301,7 +4301,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Rock Long Dark
       settings:
@@ -5650,7 +5650,7 @@ MonoBehaviour:
       colorTag: 0
     - name: Small 1 - 1
       settings:
-        brushRadius: 1
+        brushRadius: 10.834708
         brushSpacing: 0.5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
@@ -6066,9 +6066,11 @@ MonoBehaviour:
           type: 3}
       - gameObject: {fileID: 9082049113662834322, guid: 07a481adc67250843b1dc6ae6be44c26,
           type: 3}
-      - gameObject: {fileID: 0}
-      - gameObject: {fileID: 0}
-      selectedSlot: 5
+      - gameObject: {fileID: 8073875594832033001, guid: 63cc472a25bd1ef40bf0b7bf7e10324c,
+          type: 3}
+      - gameObject: {fileID: 8073875594832033001, guid: ee133650548861b42aabfc45e16f7439,
+          type: 3}
+      selectedSlot: 8
       selected: 1
       colorTag: 0
     - name: Plant 3 - 3
@@ -6490,7 +6492,7 @@ MonoBehaviour:
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
-        orientationMode: 0
+        orientationMode: 2
         alongBrushStroke: 0
         rotation: {x: 0, y: 0, z: 0}
         randomizeOrientationX: 0
@@ -6742,7 +6744,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Pillar
       settings:
@@ -6756,7 +6758,7 @@ MonoBehaviour:
           m_Bits: 0
         surfaceOffset: 0
         orientationTransformMode: 0
-        orientationMode: 0
+        orientationMode: 2
         alongBrushStroke: 0
         rotation: {x: 0, y: 0, z: 0}
         randomizeOrientationX: 0
@@ -6875,7 +6877,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Kagura
       settings:
@@ -7281,14 +7283,14 @@ MonoBehaviour:
     levelsInWhite: 255
     levelsOutBlack: 0
     levelsOutWhite: 255
-  activeTab: 1
+  activeTab: 2
   paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 288
+    m_Bits: 32
   placeUnder: 2
   overwritePrefabLayer: 0
   prefabPlaceLayer: 5
