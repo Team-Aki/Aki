@@ -20,17 +20,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSmoothVelocity; //variables to smooth turning the character
     [SerializeField] private float turnSmoothTime;
 
-  /*  [SerializeField] private float jumpHeight;
-    [SerializeField] private float doubleJumpMultiplier;
-    private bool doubleJump = false;
-    private bool isJumping = false;
-    private bool isSprinting = false;*/
+    RaycastHit hit;//For Detect Sureface/Base.
+    Vector3 surfaceNormal;//The normal of the surface the ray hit.
+    Vector3 forwardRelativeToSurfaceNormal;//For Look Rotation
+    //public LayerMask mask;
 
-/*    //Acceleration settings
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float timeZeroToMax;
-    [SerializeField] private float accelRatePerSec; //difference in velocity per sec
-    [SerializeField] private float forwardVelocity; //*/
+    /*  [SerializeField] private float jumpHeight;
+      [SerializeField] private float doubleJumpMultiplier;
+      private bool doubleJump = false;
+      private bool isJumping = false;
+      private bool isSprinting = false;*/
+
+    /*    //Acceleration settings
+        [SerializeField] private float maxSpeed;
+        [SerializeField] private float timeZeroToMax;
+        [SerializeField] private float accelRatePerSec; //difference in velocity per sec
+        [SerializeField] private float forwardVelocity; //*/
 
     private float directionY; //temp value for direction
 
@@ -44,6 +49,8 @@ public class PlayerController : MonoBehaviour
     private bool isUsingController;
     private bool isUsingKeyboard;
     private bool stopMovement = false;
+/*    private bool alignToGround = true;
+    Vector3 vAlignToGround;*/
 
     void Awake()
     {
@@ -72,6 +79,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RotateToSurface();
+
         keyboardInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         joyInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
@@ -106,6 +115,8 @@ public class PlayerController : MonoBehaviour
 
         //velocity.y -= gravity + Time.deltaTime;
 
+
+
         controller.Move(velocity * Time.deltaTime); // only Y axis for jump functionality
 
         if (controller.isGrounded) //&& velocity.y < 0
@@ -113,6 +124,41 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
 
+    }
+
+  /*  private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (alignToGround)
+            vAlignToGround = hit.normal;
+    }
+
+    private void RotateToSurface()
+    {
+        Quaternion targetRotation;
+
+        if (alignToGround)
+        {
+            Quaternion align = Quaternion.FromToRotation(Vector3.up, vAlignToGround);
+            targetRotation = align * Quaternion.LookRotation(velocity);
+        }
+        else
+            targetRotation = Quaternion.LookRotation(velocity, Vector3.up);
+        Quaternion newRotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime);
+        transform.rotation = newRotation;
+    }*/
+
+    private void RotateToSurface()
+    {
+        //For Detect The Base/Surface.
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
+        {
+            surfaceNormal = hit.normal; // Assign the normal of the surface to surfaceNormal
+            forwardRelativeToSurfaceNormal = Vector3.Cross(transform.right, surfaceNormal);
+            Quaternion targetRotation = Quaternion.LookRotation(forwardRelativeToSurfaceNormal, surfaceNormal); //check For target Rotation.
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime); //Rotate Character 
+            // it seems to reset the rotation position when I move the character, might bbe
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -186,7 +232,7 @@ public class PlayerController : MonoBehaviour
             // Atan2 -> returns angle between x-axis and vector starting at 0 to x,y
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; //face direction the player is moving
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); //function to smooth the angle turn
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f); //this could be the cause for the character resetting the rotation when moving
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * (Vector3.forward); //face direction based on camera
 
@@ -228,8 +274,6 @@ public class PlayerController : MonoBehaviour
 
                 }
             }
-
-            //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
 
         }
 

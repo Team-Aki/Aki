@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6004662129508824612}
   cam: {fileID: 0}
+  anim: {fileID: 0}
   speed: 6
   sprint: 0
   sprintMultiplier: 0
@@ -67,7 +68,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.44
   m_Radius: 0.6
-  m_SlopeLimit: 45
+  m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
