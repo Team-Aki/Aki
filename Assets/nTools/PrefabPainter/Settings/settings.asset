@@ -5650,8 +5650,8 @@ MonoBehaviour:
       colorTag: 0
     - name: Small 1 - 1
       settings:
-        brushRadius: 10.834708
-        brushSpacing: 0.5
+        brushRadius: 1.2
+        brushSpacing: 3.88
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -5668,8 +5668,8 @@ MonoBehaviour:
         randomizeOrientationZ: 41.4
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 0.5
-        scaleUniformMax: 1
+        scaleUniformMin: 0.2
+        scaleUniformMax: 0.4
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -5933,8 +5933,8 @@ MonoBehaviour:
       colorTag: 0
     - name: Plant 1 - 1
       settings:
-        brushRadius: 4.8551397
-        brushSpacing: 0.6
+        brushRadius: 4.9
+        brushSpacing: 5.07
         brushOverlapCheckMode: 1
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -7283,7 +7283,7 @@ MonoBehaviour:
     levelsInWhite: 255
     levelsOutBlack: 0
     levelsOutWhite: 255
-  activeTab: 2
+  activeTab: 4
   paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
