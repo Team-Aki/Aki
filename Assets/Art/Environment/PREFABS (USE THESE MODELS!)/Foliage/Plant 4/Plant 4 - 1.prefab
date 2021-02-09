@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3215805872911933429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plant 4 - 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9082049113662834322}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 577.53064, y: 89.34261, z: 451.9859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plant_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad8c7e9a253b9864898f389f07499bc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad8c7e9a253b9864898f389f07499bc4, type: 3}
