@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         if (stopMovement)
         {
             //CharacterController cc = GetComponent<CharacterController>();
+            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
             StartCoroutine(StopMovement());
             stopMovement = false;
         }
@@ -128,14 +129,13 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Trigger", true);
         yield return new WaitForSeconds(7.0f);
         anim.SetBool("Trigger", false);
-        controller.enabled = true;
 
     }
 
     private IEnumerator StopMovement()
     {
         controller.enabled = false;
-        yield return new WaitForSeconds(7.0f);
+        yield return new WaitForSeconds(11.0f);
         controller.enabled = true;
     }
 
