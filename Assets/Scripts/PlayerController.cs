@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-        speed = 6.0f;
+        speed = 7.5f;
         sprintMultiplier = 2.0f;
         gravity = 19.81f;
         turnSmoothTime = 0.1f;
