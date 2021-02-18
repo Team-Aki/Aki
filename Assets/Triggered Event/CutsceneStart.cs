@@ -10,6 +10,7 @@ public class CutsceneStart : MonoBehaviour
     public Image[] fore;
     public Image[] back;
     public Sound sound;
+    public CutsceneAudio cutsceneAudio;
 
     Fader fader;
 
@@ -25,10 +26,10 @@ public class CutsceneStart : MonoBehaviour
 
     private void Awake()
     {
-        sound.source = gameObject.AddComponent<AudioSource>();
-        sound.source.clip = sound.clip;
-        sound.source.volume = sound.volume;
-        sound.source.pitch = sound.pitch;
+        //sound.source = gameObject.AddComponent<AudioSource>();
+        //sound.source.clip = sound.clip;
+        //sound.source.volume = sound.volume;
+        //sound.source.pitch = sound.pitch;
     }
 
     // Start is called before the first frame update
@@ -60,12 +61,13 @@ public class CutsceneStart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        cutsceneAudio.playAudio();
         StartCoroutine(Transition());
     }
 
     private IEnumerator Transition()
     {
-        sound.source.Play();
+        //sound.source.Play();
         GetComponent<Collider>().enabled = false; //disable colliders as we won't need to play cutscene again
         yield return fader.FadeOut(fadeOutTime);
 
@@ -82,7 +84,7 @@ public class CutsceneStart : MonoBehaviour
         yield return new WaitForSeconds(fadeWaitTime);
 
         DisableSecondImage();
-
+        cutsceneAudio.stopAudio();
         yield return fader.FadeIn(fadeInTime);
     }
 
