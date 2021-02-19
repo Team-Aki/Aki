@@ -22,12 +22,12 @@ public class CutsceneAudio : MonoBehaviour
 
         if (result)
         {
-            StartCoroutine(FadeIn(audioSource, 2f, volume));
+            StartCoroutine(FadeIn(audioSource, 4f, volume));
         }
 
         else
         {
-            StartCoroutine(FadeIn(audioSource, 2f, 0f));
+            StartCoroutine(FadeIn(audioSource, 4f, 0f));
         }
         
     }
