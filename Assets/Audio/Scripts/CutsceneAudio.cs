@@ -22,19 +22,19 @@ public class CutsceneAudio : MonoBehaviour
 
         if (result)
         {
-            StartCoroutine(FadeIn(audioSource, 1f, volume));
+            StartCoroutine(FadeIn(audioSource, 2f, volume));
         }
 
         else
         {
-            StartCoroutine(FadeIn(audioSource, 1f, 0f));
+            StartCoroutine(FadeIn(audioSource, 2f, 0f));
         }
         
     }
 
     public void stopAudio()
     {
-        StartCoroutine(FadeIn(audioSource, 1f, volume));
+        StartCoroutine(FadeOut(audioSource, 2f, volume));
     }
 
     private IEnumerator FadeIn(AudioSource audioSource, float duration, float targetVolume)
@@ -61,7 +61,7 @@ public class CutsceneAudio : MonoBehaviour
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
-            cutsceneMixer.SetFloat("Cutscene Volume", Mathf.Lerp(volume, -80f, currentTime / duration));
+            cutsceneMixer.SetFloat("Cutscene Volume", Mathf.Lerp(targetVolume, -80f, currentTime / duration));
             enviroMixer.SetFloat("Enviroment Volume", Mathf.Lerp(start, targetVolume, currentTime / duration));
             yield return null;
         }
