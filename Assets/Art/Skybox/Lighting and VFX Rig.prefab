@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1989684085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989684086}
+  - component: {fileID: 1989684087}
+  m_Layer: 0
+  m_Name: PP Spirit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1989684086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989684085}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7131789947603574451}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1989684087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989684085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 0f8b6a534074fae48839d6d188b40ef4, type: 2}
 --- !u!1 &7131789947058455106
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +59,7 @@ GameObject:
   - component: {fileID: 7131789947058455164}
   - component: {fileID: 7131789947058455165}
   m_Layer: 0
-  m_Name: Global Post-process Volume
+  m_Name: PP Living
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +95,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 0f8b6a534074fae48839d6d188b40ef4, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 98ec70a682827aa4b855d3b076ef7848, type: 2}
 --- !u!1 &7131789947497431566
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,13 +122,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7131789947497431566}
-  m_LocalRotation: {x: -0.19614892, y: -0.64462584, z: 0.19019175, w: 0.71401}
+  m_LocalRotation: {x: 0.7186371, y: -0.027834982, z: -0.6407883, w: 0.26865652}
   m_LocalPosition: {x: 857.1, y: 20.79, z: 473.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7131789947603574451}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -2, y: 1715.28, z: 1111.655}
+  m_LocalEulerAnglesHint: {x: 20.515001, y: 1707.893, z: 924.226}
 --- !u!108 &7131789947497431561
 Light:
   m_ObjectHideFlags: 0
@@ -92,7 +140,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9528302, g: 0.904737, b: 0.84046817, a: 1}
+  m_Color: {r: 0.9528302, g: 0.81403005, b: 0.7505785, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -179,6 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7131789947603574451}
+  - component: {fileID: 5033031447772573157}
   m_Layer: 0
   m_Name: Lighting and VFX Rig
   m_TagString: Untagged
@@ -200,9 +249,25 @@ Transform:
   - {fileID: 7131789947497431560}
   - {fileID: 7131789947058455164}
   - {fileID: 7310340924296112763}
+  - {fileID: 1989684086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5033031447772573157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131789947603574448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caaafcb51270964694cc63a6c604b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpiritOn: 0
+  VFXLiving: {fileID: 7131789947058455106}
+  VFXSpirit: {fileID: 1989684085}
 --- !u!1001 &7131789947024362896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -218,22 +283,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: b4906971cf9e17d4caa5ea6fda813174,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4906971cf9e17d4caa5ea6fda813174,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4906971cf9e17d4caa5ea6fda813174,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4906971cf9e17d4caa5ea6fda813174,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 900
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4906971cf9e17d4caa5ea6fda813174,
         type: 3}
