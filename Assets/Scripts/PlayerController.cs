@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Haven.PathPainter;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SocialPlatforms;
 
 public class PlayerController : MonoBehaviour
@@ -19,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float turnSmoothVelocity; //variables to smooth turning the character
     [SerializeField] private float turnSmoothTime;
+
+    [SerializeField] bool inRange;
+    [SerializeField] UnityEvent interactAction;
 
     RaycastHit hit;//For Detect Sureface/Base.
     Vector3 surfaceNormal;//The normal of the surface the ray hit.
@@ -76,7 +81,6 @@ public class PlayerController : MonoBehaviour
 /*        jumpHeight = 14.0f;
         doubleJumpMultiplier = 1.0f;*/
         sprint = speed * sprintMultiplier;
-        CheckController();
 
 
 
@@ -89,6 +93,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckController();
+
         RotateToSurface();
 
         keyboardInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -104,7 +110,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-
             KeyboardInput();
             Vector3 direction = new Vector3(keyboardInput.x, 0.0f, keyboardInput.y).normalized; //normalize to not double the speed when pressing 2 or more keys
             MoveCharacter(direction);
@@ -116,16 +121,16 @@ public class PlayerController : MonoBehaviour
         {
             //CharacterController cc = GetComponent<CharacterController>();
             //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-            StartCoroutine(StopMovement());
+            StartCoroutine(InteractionAnimation());
             stopMovement = false;
         }
+
+        CheckInteraction();
 
 
         //JumpCheck(direction); //direction = JumpCheck(direction);
 
         //velocity.y -= gravity + Time.deltaTime;
-
-
 
         controller.Move(velocity * Time.deltaTime); // only Y axis for jump functionality
 
@@ -149,27 +154,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void CheckInteraction()
     {
-        if(other.CompareTag("Cutscene"))
+        if (inRange)
         {
-            StartCoroutine(InteractionAnimation());
+            if (Input.GetButton("Interact"))
+            {
+                interactAction.Invoke();
+                inRange = false;
+            }
         }
     }
 
-    private IEnumerator InteractionAnimation()
-    {
-        stopMovement = true;
-        anim.SetBool("Trigger", true);
-        yield return new WaitForSeconds(7.0f);
-        anim.SetBool("Trigger", false);
-
+    private void OnTriggerEnter(Collider other)
+    {     
+        if (other.CompareTag("Cutscene"))
+        {
+            stopMovement = true;
+            inRange = true;
+        }    
     }
 
-    private IEnumerator StopMovement()
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Cutscene"))
+        {
+            inRange = false;
+        }
+    }
+
+
+    private IEnumerator InteractionAnimation()
     {
         controller.enabled = false;
+        anim.SetBool("Trigger", true);
         yield return new WaitForSeconds(11.0f);
+        anim.SetBool("Trigger", false);
         controller.enabled = true;
     }
 
@@ -277,7 +297,7 @@ public class PlayerController : MonoBehaviour
         UpdateMovementAnimation();
     }
 
-        private void UpdateMovementAnimation()
+    private void UpdateMovementAnimation()
     {
         Vector3 velocity = controller.velocity;
         Vector3 localVelocity = controller.transform.InverseTransformDirection(velocity);

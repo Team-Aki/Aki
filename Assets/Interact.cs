@@ -7,13 +7,12 @@ using UnityEngine.Events;
 public class Interact : MonoBehaviour
 {
     [SerializeField] bool inRange;
-    [SerializeField] KeyCode interact;
     [SerializeField] UnityEvent interactAction;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class Interact : MonoBehaviour
     {
         if(inRange)
         {
-            if(Input.GetKeyDown(interact))
+            if(Input.GetButton("Interact"))
             {
                 interactAction.Invoke();
             }

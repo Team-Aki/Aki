@@ -10,6 +10,7 @@ public class CutsceneStart : MonoBehaviour
     public Image[] fore;
     public Image[] back;
     public Sound sound;
+    Animator anim;
 
     Fader fader;
 
@@ -29,6 +30,8 @@ public class CutsceneStart : MonoBehaviour
         sound.source.clip = sound.clip;
         sound.source.volume = sound.volume;
         sound.source.pitch = sound.pitch;
+
+        anim = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
