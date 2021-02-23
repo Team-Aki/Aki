@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    public Animator anim;
+    private Animator anim;
 
     //Movement Settings
 
@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
         UpdateMovementAnimation();
     }
 
-        private void UpdateMovementAnimation()
+    private void UpdateMovementAnimation()
     {
         Vector3 velocity = controller.velocity;
         Vector3 localVelocity = controller.transform.InverseTransformDirection(velocity);
