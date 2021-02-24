@@ -1,22 +1,12 @@
 fileFormatVersion: 2
-guid: 818620c1d5d42b249a2ea9c15708d5e2
+guid: 009caae429bbe2745b45d07387699a48
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Walk
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: aki_rig_007_lambert2
-    second: {fileID: 2100000, guid: de6bcdad66a28ed4d9acc00336fb73df, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: e17bedf83b213d64ebee0e1a75834e92, type: 2}
+    second: Trot
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -45,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: Trot
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 24
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

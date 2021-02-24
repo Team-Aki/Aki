@@ -241,12 +241,12 @@ public class PlayerController : MonoBehaviour
 
             if (isUsingController)
             {
-                if (joyHorizontal > 0.5f || joyHorizontal < -0.5f)
+                if (joyHorizontal > 0.8f || joyHorizontal < -0.8f)
                 {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
                     //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
                 }
-                else if (joyVertical > 0.5f || joyVertical < -0.5f)
+                else if (joyVertical > 0.8f || joyVertical < -0.8f)
                 {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
                     //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
