@@ -11,6 +11,8 @@ public class CutsceneStart : MonoBehaviour
     public Image[] back;
     public Sound sound;
     public CutsceneAudio cutsceneAudio;
+    public VFX_Toggle spiritWorld;
+    public bool spiritTransition;
 
     Fader fader;
 
@@ -26,10 +28,7 @@ public class CutsceneStart : MonoBehaviour
 
     private void Awake()
     {
-        //sound.source = gameObject.AddComponent<AudioSource>();
-        //sound.source.clip = sound.clip;
-        //sound.source.volume = sound.volume;
-        //sound.source.pitch = sound.pitch;
+        spiritWorld.GetComponent<VFX_Toggle>();
     }
 
     // Start is called before the first frame update
@@ -37,8 +36,6 @@ public class CutsceneStart : MonoBehaviour
     {
 
         isPlaying = false;
-        //sound = GetComponent<Sound>();
-
         fader = FindObjectOfType<Fader>();
 
         for (int i = 0; i < fore.Length; i++)
@@ -72,6 +69,11 @@ public class CutsceneStart : MonoBehaviour
         yield return fader.FadeOut(fadeOutTime);
 
         EnableFirstImage();
+
+        if (spiritTransition)
+            spiritWorld.ActivateSpiritWorld();
+        else
+            spiritWorld.DeactivateSpiritWorld();
 
         yield return new WaitForSeconds(fadeWaitTime);
 

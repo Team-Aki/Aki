@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VFX_Toggle : MonoBehaviour
 {
@@ -28,5 +29,15 @@ public class VFX_Toggle : MonoBehaviour
             VFXLiving.gameObject.SetActive(true);
             VFXSpirit.gameObject.SetActive(false);
         }
+    }
+
+    public void ActivateSpiritWorld()
+    {
+        SpiritOn = true;
+    }
+
+    public void DeactivateSpiritWorld()
+    {
+        SpiritOn = false;
     }
 }
