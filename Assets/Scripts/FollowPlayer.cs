@@ -9,6 +9,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] NavMeshAgent puppy;
     private Animator anim;
+    private bool activateAI;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,9 +20,22 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        puppy.SetDestination(player.position);
-        UpdateMovementAnimation();
+        if (activateAI)
+        {
+            Debug.Log("AI ACTIVE");
+            puppy.SetDestination(player.position);
+            UpdateMovementAnimation();
+        }
+    }
 
+    public void ActivateAI()
+    {
+        activateAI = true;
+    }
+
+    public void DeactivateAI()
+    {
+        activateAI = false;
     }
 
     private void UpdateMovementAnimation()

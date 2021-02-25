@@ -12,7 +12,9 @@ public class CutsceneStart : MonoBehaviour
     public Sound sound;
     public CutsceneAudio cutsceneAudio;
     public VFX_Toggle spiritWorld;
+    public FollowPlayer puppy;
     public bool spiritTransition;
+    public bool followPlayer;
 
     Fader fader;
 
@@ -29,6 +31,7 @@ public class CutsceneStart : MonoBehaviour
     private void Awake()
     {
         spiritWorld.GetComponent<VFX_Toggle>();
+        puppy.GetComponent<FollowPlayer>();
     }
 
     // Start is called before the first frame update
@@ -74,6 +77,12 @@ public class CutsceneStart : MonoBehaviour
             spiritWorld.ActivateSpiritWorld();
         else
             spiritWorld.DeactivateSpiritWorld();
+
+        if (followPlayer)
+            puppy.ActivateAI();
+        else
+            puppy.DeactivateAI();
+
 
         yield return new WaitForSeconds(fadeWaitTime);
 
