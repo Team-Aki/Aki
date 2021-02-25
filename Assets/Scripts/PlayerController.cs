@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
-    public Animator anim;
+    private Animator anim;
 
     //Movement Settings
 
@@ -78,8 +78,6 @@ public class PlayerController : MonoBehaviour
         sprint = speed * sprintMultiplier;
         CheckController();
 
-
-
         /*        maxSpeed = 10.0f;
                 timeZeroToMax = 5.8f;
                 accelRatePerSec = maxSpeed / timeZeroToMax; //equation of acceleration
@@ -93,8 +91,6 @@ public class PlayerController : MonoBehaviour
 
         keyboardInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         joyInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); //sphere at bottom of the player to check for collisions for gravity checks
 
         if (isUsingController)
         {
@@ -114,8 +110,6 @@ public class PlayerController : MonoBehaviour
 
         if (stopMovement)
         {
-            //CharacterController cc = GetComponent<CharacterController>();
-            //transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
             StartCoroutine(StopMovement());
             stopMovement = false;
         }
@@ -144,7 +138,6 @@ public class PlayerController : MonoBehaviour
             forwardRelativeToSurfaceNormal = Vector3.Cross(transform.right, surfaceNormal);
             targetRotation = Quaternion.LookRotation(forwardRelativeToSurfaceNormal, surfaceNormal); //check For target Rotation.
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 3); //Rotate Character 
-            // it seems to reset the rotation position when I move the character, might bbe
 
         }
     }
@@ -157,12 +150,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Water"))
+        {
+            anim.SetBool("Swim", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            anim.SetBool("Swim", false);
+        }
+    }
+
     private IEnumerator InteractionAnimation()
     {
         stopMovement = true;
-        anim.SetBool("Trigger", true);
+        anim.SetBool("Interact", true);
         yield return new WaitForSeconds(7.0f);
-        anim.SetBool("Trigger", false);
+        anim.SetBool("Interact", false);
 
     }
 
@@ -225,13 +234,10 @@ public class PlayerController : MonoBehaviour
 /*            if (angleX >= 45)
                 angleX = 0;
 */
-            transform.rotation = Quaternion.Euler(angleX, angle, 0f); //this could be the cause for the character resetting the rotation when moving
-            //probably overriding the rotation, don't know how to solve
+            transform.rotation = Quaternion.Euler(angleX, angle, 0f);
 
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * (Vector3.forward); //face direction based on camera
-
-            //RotateToSurface();
 
             //JumpCheck(moveDir);
 
@@ -241,20 +247,17 @@ public class PlayerController : MonoBehaviour
 
             if (isUsingController)
             {
-                if (joyHorizontal > 0.5f || joyHorizontal < -0.5f)
+                if (joyHorizontal > 0.8f || joyHorizontal < -0.8f)
                 {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
-                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
                 }
-                else if (joyVertical > 0.5f || joyVertical < -0.5f)
+                else if (joyVertical > 0.8f || joyVertical < -0.8f)
                 {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
-                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
                 }
                 else
                 {
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                    //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
                 }
             }
             else
@@ -262,12 +265,10 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetButton("Sprint")) //on hold
                 {
                     controller.Move(moveDir.normalized * sprint * Time.deltaTime);
-                    //anim.SetFloat("Velocity", sprint, turnSmoothTime, Time.deltaTime);
                 }
                 else
                 {
                     controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                    //anim.SetFloat("Velocity", speed, turnSmoothTime, Time.deltaTime);
 
                 }
             }
@@ -277,7 +278,7 @@ public class PlayerController : MonoBehaviour
         UpdateMovementAnimation();
     }
 
-        private void UpdateMovementAnimation()
+    private void UpdateMovementAnimation()
     {
         Vector3 velocity = controller.velocity;
         Vector3 localVelocity = controller.transform.InverseTransformDirection(velocity);

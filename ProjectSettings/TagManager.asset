@@ -9,6 +9,7 @@ TagManager:
   - tree
   - dirt
   - Cutscene
+  - Water
   layers:
   - Default
   - TransparentFX
