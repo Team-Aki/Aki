@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SocialPlatforms;
 
 public class PlayerController : MonoBehaviour
@@ -19,6 +20,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float turnSmoothVelocity; //variables to smooth turning the character
     [SerializeField] private float turnSmoothTime;
+    [SerializeField] bool inRange;
+    [SerializeField] UnityEvent interactAction;
+
 
     RaycastHit hit;//For Detect Sureface/Base.
     Vector3 surfaceNormal;//The normal of the surface the ray hit.
@@ -76,7 +80,6 @@ public class PlayerController : MonoBehaviour
 /*        jumpHeight = 14.0f;
         doubleJumpMultiplier = 1.0f;*/
         sprint = speed * sprintMultiplier;
-        CheckController();
 
         /*        maxSpeed = 10.0f;
                 timeZeroToMax = 5.8f;
@@ -87,6 +90,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckController();
+
+        CheckInteraction();
+
         RotateToSurface();
 
         keyboardInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -142,6 +149,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CheckInteraction()
+    {
+        if (inRange)
+        {
+            if (Input.GetButton("Interact"))
+            {
+                interactAction.Invoke();
+                inRange = false;
+            }
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Cutscene"))
@@ -152,7 +172,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Water"))
+        if (other.CompareTag("Cutscene"))
+        {
+            stopMovement = true;
+            inRange = true;
+        }
+
+        if (other.CompareTag("Water"))
         {
             anim.SetBool("Swim", true);
         }
@@ -160,6 +186,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Cutscene"))
+        {
+            inRange = false;
+        }
+
         if (other.CompareTag("Water"))
         {
             anim.SetBool("Swim", false);
@@ -168,10 +199,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator InteractionAnimation()
     {
-        stopMovement = true;
+        controller.enabled = false;
         anim.SetBool("Interact", true);
-        yield return new WaitForSeconds(7.0f);
+        yield return new WaitForSeconds(11.0f);
         anim.SetBool("Interact", false);
+        controller.enabled = true;
 
     }
 
