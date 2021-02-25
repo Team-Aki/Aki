@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float turnSmoothVelocity; //variables to smooth turning the character
     [SerializeField] private float turnSmoothTime;
-    [SerializeField] bool inRange;
-    [SerializeField] UnityEvent interactAction;
+    /*[SerializeField] bool inRange;
+    [SerializeField] UnityEvent interactCutscene1;
+    [SerializeField] UnityEvent interactCutscene2;
+    [SerializeField] UnityEvent interactCutscene3;*/
+
+
 
 
     RaycastHit hit;//For Detect Sureface/Base.
@@ -92,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckController();
 
-        CheckInteraction();
+        //CheckInteraction();
 
         RotateToSurface();
 
@@ -149,24 +153,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CheckInteraction()
+    /*private void CheckInteraction()
     {
         if (inRange)
         {
-            if (Input.GetButton("Interact"))
+            if (Input.GetButton("InteractBtn"))
             {
-                interactAction.Invoke();
-                inRange = false;
+                interactCutscene1.Invoke();
+            }
+            else if (Input.GetButton("InteractBtn"))
+            {
+                interactCutscene2.Invoke();
+            }
+            else if (Input.GetButton("InteractBtn"))
+            {
+                interactCutscene3.Invoke();
             }
         }
     }
-
+*/
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Cutscene"))
         {
             StartCoroutine(InteractionAnimation());
+            //inRange = true;
         }
     }
 
@@ -175,7 +187,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Cutscene"))
         {
             stopMovement = true;
-            inRange = true;
+            //inRange = true;
         }
 
         if (other.CompareTag("Water"))
@@ -186,10 +198,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Cutscene"))
+        /*if (other.CompareTag("Cutscene"))
         {
             inRange = false;
-        }
+        }*/
 
         if (other.CompareTag("Water"))
         {
