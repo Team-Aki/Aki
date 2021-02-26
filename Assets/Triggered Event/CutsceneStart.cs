@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CutsceneStart : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CutsceneStart : MonoBehaviour
 
     Fader fader;
 
+    [SerializeField] public bool killGame = false;
     [SerializeField] float fadeOutTime = 3f;
     [SerializeField] float fadeInTime = 3f;
     [SerializeField] float fadeWaitTime = 3f;
@@ -63,6 +65,19 @@ public class CutsceneStart : MonoBehaviour
     {
         cutsceneAudio.playAudio();
         StartCoroutine(Transition());
+
+        if (killGame){
+            StartCoroutine(Kill());
+        }
+    }
+
+    IEnumerator Kill()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(30);
+
+        SceneManager.LoadScene("MainMenu");
+        
     }
 
     private IEnumerator Transition()
@@ -120,6 +135,7 @@ public class CutsceneStart : MonoBehaviour
         fore[0].enabled = false;
         back[0].enabled = false;
         isPlaying = false;
+        
     }
 
 

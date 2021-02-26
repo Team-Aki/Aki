@@ -2274,7 +2274,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Tree 4 Pink
       settings:
@@ -2939,7 +2939,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Tree 5 Pink
       settings:
@@ -6071,7 +6071,7 @@ MonoBehaviour:
       - gameObject: {fileID: 8073875594832033001, guid: ee133650548861b42aabfc45e16f7439,
           type: 3}
       selectedSlot: 8
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Plant 3 - 3
       settings:
@@ -6205,7 +6205,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -6611,7 +6611,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Slab
       settings:
@@ -6744,7 +6744,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Pillar
       settings:
@@ -7283,7 +7283,7 @@ MonoBehaviour:
     levelsInWhite: 255
     levelsOutBlack: 0
     levelsOutWhite: 255
-  activeTab: 4
+  activeTab: 5
   paintOnSelected: 0
   paintLayers:
     serializedVersion: 2

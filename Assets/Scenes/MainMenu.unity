@@ -2958,6 +2958,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 756350334}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &873213286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7131789947058455106, guid: 43f0ebdc0db9fc04ebe99f2e3472fc8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7131789947515805085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &875888410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8d76e6e4907f5c45bbdad9ce582e317,
@@ -11816,6 +11822,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5033031447772573157, guid: 43f0ebdc0db9fc04ebe99f2e3472fc8d,
+        type: 3}
+      propertyPath: VFXSpirit
+      value: 
+      objectReference: {fileID: 873213286}
     - target: {fileID: 7131789947497431560, guid: 43f0ebdc0db9fc04ebe99f2e3472fc8d,
         type: 3}
       propertyPath: m_LocalRotation.w

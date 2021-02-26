@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class VFX_Toggle : MonoBehaviour
 {
-    private bool SpiritOn;
+    private bool SpiritOn = true;
 
     public GameObject VFXLiving;
     public GameObject VFXSpirit;
