@@ -7043,7 +7043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1696145004
 Transform:
   m_ObjectHideFlags: 0
@@ -8825,6 +8825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 4 Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 75c40152676c784408e6c76b1b7cb137,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75c40152676c784408e6c76b1b7cb137, type: 3}
 --- !u!4 &343746471539467454 stripped
@@ -9125,6 +9130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 3 Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 1b7927e0138bf634190ee9c5426a1669,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7927e0138bf634190ee9c5426a1669, type: 3}
 --- !u!4 &865267834628259680 stripped
@@ -9350,6 +9360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 4 Green
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: fbbb481671f9eda4f9b4d03696e1b248,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbbb481671f9eda4f9b4d03696e1b248, type: 3}
 --- !u!4 &1103474481690650072 stripped
@@ -9425,6 +9440,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 4 Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 9111ab8cda224284f8fd450498a2d091,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9111ab8cda224284f8fd450498a2d091, type: 3}
 --- !u!4 &1151941530045290092 stripped
@@ -9499,6 +9519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 2 Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: cb19c29fdeee44e41bb6bfba755615ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb19c29fdeee44e41bb6bfba755615ba, type: 3}
@@ -9724,6 +9749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 4 Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 4057ccf280248374ab86dc05742bd9bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4057ccf280248374ab86dc05742bd9bc, type: 3}
@@ -10169,6 +10199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 3 Red
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: f6d01edda6b148d43bbc0a599f60dbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d01edda6b148d43bbc0a599f60dbc1, type: 3}
 --- !u!4 &2828020810430205737 stripped
@@ -10243,6 +10278,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 1 Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: fe5b8ee2ed4a2544ebc337a000208e4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe5b8ee2ed4a2544ebc337a000208e4d, type: 3}
@@ -10387,6 +10427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 1 Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 692fae1e3153d7e499b5b41c83423f50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 692fae1e3153d7e499b5b41c83423f50, type: 3}
@@ -10682,6 +10727,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 1 Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 8b478854471b79742b7dcd3aebcc8131,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b478854471b79742b7dcd3aebcc8131, type: 3}
 --- !u!4 &4175457561233754779 stripped
@@ -10906,6 +10956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 3 Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 1fd10bc0e5ffb2645962c20f3de6badf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd10bc0e5ffb2645962c20f3de6badf, type: 3}
@@ -11132,6 +11187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 2 Red
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: c44cfd28dfedf5047a4c5610a72cb002,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c44cfd28dfedf5047a4c5610a72cb002, type: 3}
 --- !u!4 &5736668352534695719 stripped
@@ -11207,6 +11267,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 1 Green
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: b8877c3e830e6d24687934497b7c68fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8877c3e830e6d24687934497b7c68fc, type: 3}
 --- !u!4 &5770069546077525598 stripped
@@ -11281,6 +11346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 2 Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 5e1ca9ca7c21be2458b813a1e6d4a614,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1ca9ca7c21be2458b813a1e6d4a614, type: 3}
@@ -11432,6 +11502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 2 Yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 75387229908bc1043a0ae1e2079b258b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75387229908bc1043a0ae1e2079b258b, type: 3}
 --- !u!4 &6077078226775569051 stripped
@@ -11582,6 +11657,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 5 Green
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 414c51cd5ba5c49498eb3288b6c110fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 414c51cd5ba5c49498eb3288b6c110fb, type: 3}
 --- !u!4 &6500673773764259137 stripped
@@ -11656,6 +11736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 2 Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 4fc61f696270cce4aa8fb027f5383cd7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc61f696270cce4aa8fb027f5383cd7, type: 3}
@@ -11732,6 +11817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 4 Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 6d502a5822e3bc64c97017ac7c0c5c53,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d502a5822e3bc64c97017ac7c0c5c53, type: 3}
 --- !u!4 &6952301764973115462 stripped
@@ -11806,6 +11896,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 5 Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 0a3fbb2fe94a0cb4a9762933791279a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3fbb2fe94a0cb4a9762933791279a8, type: 3}
@@ -11991,6 +12086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 5 Pink
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 6feb624c6c4209e44bac310aaf777a48,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6feb624c6c4209e44bac310aaf777a48, type: 3}
 --- !u!4 &7238453073164585526 stripped
@@ -12065,6 +12165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 5 Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: fea130202a63253418aa15f2458ebfaf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea130202a63253418aa15f2458ebfaf, type: 3}
@@ -12141,6 +12246,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree 3 Green
       objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: f73b6c2da7d2d0e44b12da89086a4696,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73b6c2da7d2d0e44b12da89086a4696, type: 3}
 --- !u!4 &7297839870867040328 stripped
@@ -12215,6 +12325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 1 Pink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: d3c49dfab4e915540a25675e9d60253c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c49dfab4e915540a25675e9d60253c, type: 3}
@@ -12503,6 +12618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 3 Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 8dacce32b4b75e04189dce1d7c0ad75f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dacce32b4b75e04189dce1d7c0ad75f, type: 3}
@@ -12803,6 +12923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tree 5 Orange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333341977235621480, guid: 8c0294bde52e098488e770a74788d5ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c0294bde52e098488e770a74788d5ea, type: 3}
