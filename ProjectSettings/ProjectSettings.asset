@@ -598,6 +598,7 @@ PlayerSettings:
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
     1: UNISTORM_PRESENT;MCSCaves
+    13: MCSCaves
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 1
