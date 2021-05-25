@@ -7,10 +7,6 @@ using UnityEngine;
 
 namespace SCPE
 {
-#if URP
-    #if URP_10_0_OR_NEWER
-    [DisallowMultipleRendererFeature]
-    #endif
     public class FogRenderer : ScriptableRendererFeature
     {
         [SerializeField]
@@ -219,5 +215,4 @@ namespace SCPE
             if (enableSkyboxCapture) renderer.EnqueuePass(skyboxRenderPass);
         }
     }
-#endif
 }
